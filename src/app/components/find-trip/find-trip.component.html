@@ -7,9 +7,21 @@
   </p>
   <div role="form" class="booking-form">
     <label for="booking-code">Booking code</label>
-    <input type="text" name="booking-code" id="booking-code" />
+    <input type="text" id="booking-code" [formControl]="bookingCode" />
+    <p
+      class="booking-code-error"
+      *ngIf="bookingCode.value && bookingCode.invalid"
+    >
+      Booking code is between 5 and 6 characters long and can contain numbers
+      from 2 to 9
+    </p>
     <label for="family-name">Family name</label>
-    <input type="text" name="family-name" id="family-name" />
+    <input type="text" id="family-name" [formControl]="familyName" />
+    <p class="family-name-error" *ngIf="familyName.value && familyName.invalid">
+      Family name must contain only characters
+    </p>
   </div>
+  <p>{{ bookingCode.value }}</p>
+  <p>{{ familyName.value }}</p>
   <button>Retrieve booking</button>
 </div>

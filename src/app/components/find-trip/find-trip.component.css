@@ -6,6 +6,14 @@
   align-items: center;
   justify-content: center;
 }
+.booking-code-error {
+  color: #d40504;
+  font-size: 0.7rem;
+}
+.family-name-error {
+  color: #d40504;
+  font-size: 0.7rem;
+}
 
 hr {
   border: 2.5px solid #003145;
