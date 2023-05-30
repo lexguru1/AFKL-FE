@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "ExcellenceInMotionBold";
+  src: url(./assets/excellenceinmotionv-bold-webfont.woff2);
+}
+@font-face {
+  font-family: "ExcellenceInMotionRegular";
+  src: url(./assets/excellenceinmotionv-webfont.woff2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "ExcellenceInMotionRegular", -apple-system, "system-ui",
+    "Segoe UI", "Roboto", sans-serif;
+}

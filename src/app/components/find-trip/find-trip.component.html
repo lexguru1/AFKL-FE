@@ -1,0 +1,42 @@
+<div role="card" class="card-booking">
+  <h2>RETRIEVE YOUR BOOKING</h2>
+  <hr />
+  <p>
+    You can find your booking by filling out your family name and the booking
+    code in your booking confirmation
+  </p>
+  <div role="form" class="booking-form">
+    <label for="booking-code">Booking code</label>
+    <input type="text" id="booking-code" [formControl]="bookingCode" />
+    <p
+      class="booking-code-error"
+      *ngIf="bookingCode.value && bookingCode.invalid"
+    >
+      Booking code is between 5 and 6 characters long and can contain numbers
+      from 2 to 9
+    </p>
+    <label for="family-name">Family name</label>
+    <input type="text" id="family-name" [formControl]="familyName" />
+    <p class="family-name-error" *ngIf="familyName.value && familyName.invalid">
+      Family name must contain only characters
+    </p>
+  </div>
+  <button
+    (click)="findBooking()"
+    [disabled]="!bookingCode.value || !familyName.value"
+  >
+    Retrieve booking
+  </button>
+  <div class="booking-details" *ngIf="bookingFound">
+    <p>
+      Passenger name: {{ bookingFound.passengers.firstName }}
+      {{ bookingFound.passengers.lastName }}
+    </p>
+    <p>
+      Destination: {{ bookingFound.itinerary.connections[0].destination.name }}
+    </p>
+  </div>
+  <p *ngIf="bookingNotFound" class="booking-details-not-found">
+    Booking not found! Please try again!
+  </p>
+</div>

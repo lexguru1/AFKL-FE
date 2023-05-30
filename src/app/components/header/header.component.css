@@ -1,0 +1,20 @@
+.header-background {
+  background-image: url(../../../assets/af_pattern_bg.png);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .header-background {
+    height: 4rem;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .header-background {
+    height: 3rem;
+  }
+}
