@@ -55,6 +55,20 @@ button {
   padding: 1rem;
   font-size: 0.9rem;
 }
+button:disabled {
+  background-color: #9e5c5c;
+}
+.booking-details {
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.booking-details-not-found {
+  color: #d40504;
+  margin-top: 2rem;
+}
 
 @media only screen and (max-width: 600px) {
   .card-booking {
