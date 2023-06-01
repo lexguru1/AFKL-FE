@@ -56,7 +56,7 @@ button {
   font-size: 0.9rem;
 }
 button:disabled {
-  background-color: #9e5c5c;
+  background-color: #7676768d;
 }
 .booking-details {
   width: 100%;
