@@ -7,6 +7,8 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./find-trip.component.css'],
 })
 export class FindTripComponent {
+  title = 'Find trip AFKL-FE';
+
   bookingCode = new FormControl('', [
     Validators.required,
     Validators.minLength(5),

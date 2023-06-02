@@ -1,10 +1,14 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FindTripComponent } from './components/find-trip/find-trip.component';
 
 describe('AppComponent', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    declarations: [AppComponent]
-  }));
+  beforeEach(() =>
+    TestBed.configureTestingModule({
+      declarations: [AppComponent, HeaderComponent, FindTripComponent],
+    })
+  );
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
@@ -18,10 +22,15 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('AFKL-FE');
   });
 
-  it('should render title', () => {
+  it(`should render header component`, () => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('AFKL-FE app is running!');
+    const app = fixture.debugElement.nativeElement;
+    expect(app.querySelector('app-header')).toBeTruthy();
+  });
+
+  it(`should render find trip component`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.nativeElement;
+    expect(app.querySelector('app-find-trip')).toBeTruthy();
   });
 });
