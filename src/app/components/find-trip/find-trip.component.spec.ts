@@ -72,7 +72,6 @@ describe('FindTripComponent', () => {
       fixture.debugElement.nativeElement.querySelectorAll('input')[1];
     inputBooking.value = bookingCode;
     inputName.value = familyName;
-    console.log(button);
     button.click();
     tick();
     expect(component.findBooking).toHaveBeenCalled();
